@@ -1,0 +1,41 @@
+<head>
+    <title>Concursos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<body class=" blue lighten-5">
+    <div class="container">
+        <div>
+            <a routerLink="/cadastrarConcurso" class="btn waves-effect waves-light">Novo Concurso</a>
+        </div>
+        <div>
+            <h2>Listagem dos Concursos</h2>
+
+            <table class="table">
+                <tr>
+                    <td>Id</td>
+                    <td>Nome</td>
+                    <td>Quantidade De Vagas</td>
+                </tr>
+                <tr *ngFor="let concurso of concursos">
+                    <td>{{concurso.id}}</td>
+                    <td>{{concurso.nome}}</td>
+                    <td>{{concurso.numeroDeVagas}}</td>
+                    <td>
+
+                        <button type="submit" class="blue darken-4" (click)="atualizar(concurso)">
+                            Editar
+                        </button>
+
+                        <button type="submit" class="orange darken-4" (click)="remover(concurso)">
+                            Remover
+                        </button>
+                    </td>
+
+                </tr>
+
+            </table>
+        </div>
+    </div>
+
+</body>

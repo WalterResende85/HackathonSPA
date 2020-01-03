@@ -1,0 +1,24 @@
+<form method="POST" #formCandidato (ngSubmit)="salvar(formCandidato)" class="form-group">
+    <table class="table">
+        <tr>
+            <td>Nome</td>
+            <td> <input type="text" id="nome" name="nome" class="form-control" [(ngModel)] = "candidato.nome" required> </td>
+        </tr>
+        <tr>
+            <td>CPF</td>
+            <td><input type="text" id="cpf" name="cpf" class="form-control" [(ngModel)] = "candidato.cpf" required></td>
+        </tr>
+        <tr>
+            <td>Cidade</td>
+            <td><input type="text" id="cidade" name=cidade class="form-control" [(ngModel)] = "candidato.cidade" required></td>
+        </tr>
+        <tr>
+            <td>Nota</td>
+            <td><input type="text" id="nota" name="nota" class="form-control" [(ngModel)] = "candidato.nota" required></td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            <td><button class="btn waves-effect waves-light right" type="submit">Salvar</button></td>
+        </tr>
+    </table>
+</form>
