@@ -1,5 +1,7 @@
-import { ConcursoService } from './../concurso.service';
+
 import { Component, OnInit } from '@angular/core';
+import { ConcursoService } from './../concurso.service';
+import { Concurso } from '../editar-concurso/editar-concurso.model';
 
 @Component({
   selector: 'app-concursos-listagem',
@@ -13,13 +15,17 @@ export class ConcursosListagemComponent implements OnInit {
   ngOnInit() {
     this.listar();
   }
-  
+
   listar() {
     this.concursoService.listar().subscribe(dados => {
       this.concursos = dados;
     });
   }
-  remover(concurso){
-    this.concursoService.remover(concurso).subscribe();
+  atualizar(idConcurso: number, concurso: Concurso){
+    this.concursoService.atualizar(idConcurso, concurso).subscribe();
+    
+  }
+  remover(idConcurso: number) {
+    this.concursoService.remover(idConcurso).subscribe();
   }
 }

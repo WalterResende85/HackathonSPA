@@ -18,6 +18,7 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditarCandidatoComponent } from './editar-candidato/editar-candidato.component';
+import { EditarConcursoComponent } from './editar-concurso/editar-concurso.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { EditarCandidatoComponent } from './editar-candidato/editar-candidato.co
     ConcursoFormComponent,
     HomeComponent,
     HeaderComponent,
-    EditarCandidatoComponent
+    EditarCandidatoComponent,
+    EditarConcursoComponent
   ],
   imports: [
     BrowserModule,

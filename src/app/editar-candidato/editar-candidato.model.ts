@@ -1,10 +1,9 @@
 
 
 export class Candidato {
-    id: number;
+    idCandidato: number;
     nome: String;
     cpf: String;
     cidade: String;
-    nota: number;
-    aprovado: boolean;
+ 
 }

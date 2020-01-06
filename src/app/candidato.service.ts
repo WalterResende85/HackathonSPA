@@ -11,7 +11,7 @@ export class CandidatoService {
 
   constructor(private http: HttpClient) { }
 
-  salvar(candidato){
+  salvar(candidato: any) {
     return this.http.post(this.candidatosUrl, candidato);
   }
 
@@ -19,15 +19,15 @@ export class CandidatoService {
     return this.http.get<any[]>(`${this.candidatosUrl}`);
   }
 
-  remover(candidato:any){
-    return this.http.delete(`${this.candidatosUrl}/${candidato.id}`);
+  remover(idCandidato:number){
+    return this.http.delete(`${this.candidatosUrl}/${idCandidato}`);
   }
 
-  buscar(id: number): Observable<Candidato>{
-       return this.http.get<Candidato>(`${this.candidatosUrl}/${id}`);
+  buscar(idCandidato: number): Observable<Candidato> {
+    return this.http.get<Candidato>(`${this.candidatosUrl}/${idCandidato}`);
   }
 
-  atualizar(id: number, candidato:any): Observable<Candidato>{
-    return this.http.put<Candidato>(`${this.candidatosUrl}/${id}`, candidato);
+  atualizar(idCandidato: number, candidato: any): Observable<Candidato> {
+    return this.http.put<Candidato>(`${this.candidatosUrl}/${idCandidato}`, candidato);
   }
 }

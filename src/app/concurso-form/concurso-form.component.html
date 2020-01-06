@@ -1,24 +1,16 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Cadastro de Concursos</title>
-</head>
-
-<body>
-    <form method="POST" (ngSubmit)="salvar(formConcurso)">
-        <table>
-            <tr>
-                <td>Nome</td>
-                <td><input type="text" id="nome" name="nome" class="form-control" required></td>
-
-            </tr>
-            <tr>
-                <td></td>
-                <td><button type="submit" class="btn waves-effect waves-light right">Salvar</button></td>
-            </tr>
-        </table>
-    </form>
-</body>
-
-</html>
+<form method="POST" #formConcurso (ngSubmit)="salvar(formConcurso)" class="form-group">
+    <table class="table">
+        <tr>
+            <td>Nome</td>
+            <td> <input type="text" id="nome" name="nome" class="form-control" [(ngModel)] = "concurso.nome" required> </td>
+        </tr>
+        <tr>
+            <td>Quantidade De Vagas</td>
+            <td><input type="text" id="quantidadeVagas" name="quantidadeVagas" class="form-control" [(ngModel)] = "concurso.quantidadeVagas" required></td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            <td><button class="btn waves-effect waves-light right" type="submit">Salvar</button></td>
+        </tr>
+    </table>
+</form>
