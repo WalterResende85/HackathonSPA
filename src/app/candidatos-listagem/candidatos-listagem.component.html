@@ -27,7 +27,8 @@
                                 Editar
                             </button>
                         </a>
-                        <button id="btnRemover" class="btn orange darken-4 z-depth-2" (click)="toggleModalExcluir(candidato)">
+                        <button id="btnRemover" class="btn orange darken-4 z-depth-2"
+                            (click)="toggleModalExcluir(candidato)">
                             Remover
                         </button>
                     </td>
@@ -35,11 +36,10 @@
             </table>
         </div>
     </div>
+
     <div id="modalRemover" class="modal" *ngIf="exibirModal">
-
-
         <div class="modal-content">
-            <h5>Deseja mesmo remver o candidato {{candidato.nome}} ?</h5>
+            <h5>Deseja mesmo remover o candidato {{candidato.nome}} ?</h5>
             <button class="btn orange darken-4 z-depth-2" (click)="remover()">
                 Remover
             </button>

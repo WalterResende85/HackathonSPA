@@ -11,23 +11,23 @@ export class CandidatoService {
 
   constructor(private http: HttpClient) { }
 
-  salvar(candidato: any) {
+ public salvar(candidato: any) {
     return this.http.post(this.candidatosUrl, candidato);
   }
 
-  listar() {
+  public listar() {
     return this.http.get<any[]>(`${this.candidatosUrl}`);
   }
 
-  remover(idCandidato:number){
+  public remover(idCandidato:number){
     return this.http.delete(`${this.candidatosUrl}/${idCandidato}`);
   }
 
-  buscar(idCandidato: number): Observable<Candidato> {
+  public buscar(idCandidato: number): Observable<Candidato> {
     return this.http.get<Candidato>(`${this.candidatosUrl}/${idCandidato}`);
   }
 
-  atualizar(candidato: Candidato): Observable<Candidato> {
+  public atualizar(candidato: Candidato): Observable<Candidato> {
     return this.http.put<Candidato>(`${this.candidatosUrl}/${candidato.idCandidato}`, candidato);
   }
 }

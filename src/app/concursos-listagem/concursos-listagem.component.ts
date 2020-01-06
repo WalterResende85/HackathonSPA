@@ -10,6 +10,9 @@ import { Concurso } from '../editar-concurso/editar-concurso.model';
 })
 export class ConcursosListagemComponent implements OnInit {
   concursos: Array<any>;
+  exibirModal : boolean = false;
+  concurso: Concurso;
+
   constructor(private concursoService: ConcursoService) { }
 
   ngOnInit() {
@@ -21,11 +24,20 @@ export class ConcursosListagemComponent implements OnInit {
       this.concursos = dados;
     });
   }
-  atualizar(idConcurso: number, concurso: Concurso){
+  atualizar(idConcurso: number, concurso: Concurso) {
     this.concursoService.atualizar(idConcurso, concurso).subscribe();
-    
+
   }
-  remover(idConcurso: number) {
-    this.concursoService.remover(idConcurso).subscribe();
+  remover() {
+    this.concursoService.remover(this.concurso.idConcurso).subscribe(()=>{
+      this.toggleModalExcluir(null);
+      this.listar();
+    });
+  }
+  toggleModalExcluir(concurso: Concurso) {
+    
+    this.concurso = concurso;
+    console.log('aaaa');
+   this.exibirModal = !this.exibirModal;
   }
 }

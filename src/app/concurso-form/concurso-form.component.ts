@@ -15,8 +15,10 @@ export class ConcursoFormComponent implements OnInit {
   ngOnInit() {
     this.concurso={};
   }
-  salvar(formConcurso: FormGroup){
-    this.concursoService.salvar(this.concurso).subscribe();
-    this.router.navigate(['/concursos']);
+  salvar(){
+    this.concursoService.salvar(this.concurso).subscribe(()=>{
+      this.router.navigate(['/concursos']);
+    });
+    
   }
 }

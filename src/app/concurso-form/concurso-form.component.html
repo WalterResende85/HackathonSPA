@@ -1,4 +1,4 @@
-<form method="POST" #formConcurso (ngSubmit)="salvar(formConcurso)" class="form-group">
+<form class="form-group">
     <table class="table">
         <tr>
             <td>Nome</td>
@@ -6,11 +6,11 @@
         </tr>
         <tr>
             <td>Quantidade De Vagas</td>
-            <td><input type="text" id="quantidadeVagas" name="quantidadeVagas" class="form-control" [(ngModel)] = "concurso.quantidadeVagas" required></td>
+            <td><input type="number" id="quantidadeVagas" name="quantidadeVagas" class="form-control" [(ngModel)] = "concurso.quantidadeVagas" required></td>
         </tr>
         <tr>
             <td colspan="2"></td>
-            <td><button class="btn waves-effect waves-light right" type="submit">Salvar</button></td>
+            <td><button class="btn waves-effect waves-light right" (click)="salvar()">Salvar</button></td>
         </tr>
     </table>
 </form>
