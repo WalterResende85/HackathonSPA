@@ -22,13 +22,15 @@ export class EditarCandidatoComponent implements OnInit {
     this.buscar(this.idCandidato);
    
   }
+  
   buscar(idCandidato: number) {
        return this.CandidatoService.buscar(this.idCandidato).subscribe(resposta => {
          this.candidato = resposta;        
     });
   }
-  atualizar(idCandidato: number, formCandidato: FormGroup){
-     this.CandidatoService.atualizar(idCandidato, formCandidato).subscribe();
-     this.router.navigate(['/candidatos']);
+
+  atualizar(){
+     this.CandidatoService.atualizar(this.candidato).subscribe(()=>this.router.navigate(['/candidatos']));
+     ;
   }
 }

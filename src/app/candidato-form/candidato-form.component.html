@@ -1,4 +1,5 @@
-<form method="POST" #formCandidato (ngSubmit)="salvar(formCandidato)" class="form-group">
+<h3>Cadastrando candidato</h3>
+<form class="form-group">
     <table class="table">
         <tr>
             <td>Nome</td>
@@ -15,7 +16,7 @@
         
         <tr>
             <td colspan="2"></td>
-            <td><button class="btn waves-effect waves-light right" type="submit">Salvar</button></td>
+            <td><button class="btn waves-effect waves-light right" (click)="salvar()">Salvar</button></td>
         </tr>
     </table>
 </form>

@@ -27,7 +27,7 @@ export class CandidatoService {
     return this.http.get<Candidato>(`${this.candidatosUrl}/${idCandidato}`);
   }
 
-  atualizar(idCandidato: number, candidato: any): Observable<Candidato> {
-    return this.http.put<Candidato>(`${this.candidatosUrl}/${idCandidato}`, candidato);
+  atualizar(candidato: Candidato): Observable<Candidato> {
+    return this.http.put<Candidato>(`${this.candidatosUrl}/${candidato.idCandidato}`, candidato);
   }
 }

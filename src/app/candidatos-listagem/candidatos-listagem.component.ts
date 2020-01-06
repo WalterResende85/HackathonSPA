@@ -12,6 +12,9 @@ import { Router } from '@angular/router';
 export class CandidatosListagemComponent implements OnInit {
 
   candidatos: Array<any>;
+  exibirModal: boolean = false;
+  candidato: Candidato;
+
   constructor(private candidatoService: CandidatoService, private router: Router) { }
 
   ngOnInit() {
@@ -24,14 +27,22 @@ export class CandidatosListagemComponent implements OnInit {
       this.candidatos = dados
     });
   }
-  atualizar(id: number, candidato: Candidato) {
-    this.candidatoService.atualizar(id, candidato).subscribe();
+
+  atualizar(candidato: Candidato) {
+    this.candidatoService.atualizar(candidato).subscribe();
 
   }
 
-  remover(idCandidato: number) {
-    this.candidatoService.remover(idCandidato).subscribe();
-    this.router.navigate(['/candidatos']);
+  remover() {
+    this.candidatoService.remover(this.candidato.idCandidato).subscribe(() => {
+      this.toggleModalExcluir(null);
+      this.listar();
+    });
+  }
+
+  toggleModalExcluir(candidato: Candidato) {
+    this.candidato = candidato;
+    this.exibirModal = !this.exibirModal;
   }
 
 

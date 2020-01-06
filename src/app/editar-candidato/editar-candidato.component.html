@@ -1,5 +1,5 @@
 <h1>Editando Candidato</h1>
-<form method="PUT" #formCandidato (ngSubmit)="atualizar(formCandidato)" class="form-group">
+<form class="form-group">
     <table class="table">
        
         <tr>
@@ -19,7 +19,7 @@
         </tr>
         <tr>
             <td colspan="2"></td>
-            <td><button class="btn waves-effect waves-light right" type="submit">Salvar</button></td>
+            <td><button class="btn waves-effect waves-light right" (click)="atualizar()">Salvar</button></td>
         </tr>
     </table>
 </form>

@@ -14,9 +14,11 @@ export class CandidatoFormComponent implements OnInit {
   ngOnInit() {
     this.candidato={};
   }
-  salvar(formCandidato: FormGroup){
-    this.candidatoService.salvar(this.candidato).subscribe();
-    this.router.navigate(['/candidatos']);
+  salvar(){
+    this.candidatoService.salvar(this.candidato).subscribe(()=>{
+      this.router.navigate(['/candidatos']);
+    });
+   
   }
 
 
