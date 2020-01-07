@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ConcursoCandidatoService } from '../concurso-candidato.service';
+import { ConcursoCandidato } from './concurso-candidato-listagem.model';
+
 
 @Component({
   selector: 'app-concurso-candidato-listagem',
@@ -6,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./concurso-candidato-listagem.component.scss']
 })
 export class ConcursoCandidatoListagemComponent implements OnInit {
-
-  constructor() { }
+  concursoCandidatos: Array<any>;
+  concursoCandidato: ConcursoCandidato;
+  constructor(private concursoCandidatoService: ConcursoCandidatoService) { }
 
   ngOnInit() {
+    this.listar();
   }
-
+  listar(){
+    this.concursoCandidatoService.listar().subscribe(dados=>{
+      this.concursoCandidatos = dados;
+    });
+  }
 }

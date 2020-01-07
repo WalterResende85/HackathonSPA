@@ -1,1 +1,21 @@
-<p>concurso-candidato-listagem works!</p>
+<head>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+<div class="container blue lighten-5 z-depth-5">
+    <h5>Detalhes do concurso</h5>
+<table class="table">
+    <tr>
+        <th>Nome do Candidato</th>
+        <th>Nome do Concurso</th>
+        <th>Nota</th>
+    </tr>
+    <tr *ngFor="let concursoCandidato of concursoCandidatos">
+        <td>{{concursoCandidato.nomeCandidato}}</td>
+        <td>{{concursoCandidato.nomeConcurso}}</td>
+        <td>{{concursoCandidato.nota}}</td>
+    </tr>
+</table>
+</div>
+</body>

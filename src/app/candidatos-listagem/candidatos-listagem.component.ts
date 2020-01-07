@@ -24,7 +24,7 @@ export class CandidatosListagemComponent implements OnInit {
 
   listar() {
     this.candidatoService.listar().subscribe(dados => {
-      this.candidatos = dados
+      this.candidatos = dados;
     });
   }
 
