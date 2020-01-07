@@ -9,6 +9,8 @@ import { ConcursosListagemComponent } from './concursos-listagem/concursos-lista
 import { CandidatosListagemComponent } from './candidatos-listagem/candidatos-listagem.component';
 import { EditarCandidatoComponent } from "./editar-candidato/editar-candidato.component";
 import { EditarConcursoComponent } from './editar-concurso/editar-concurso.component';
+import{ ConcursoCandidatoListagemComponent} from './concurso-candidato-listagem/concurso-candidato-listagem.component';
+
 const APP_ROUTES: Routes = [
     { path: '', component: HomeComponent },
     { path: 'candidatos', component: CandidatosListagemComponent },
@@ -16,7 +18,7 @@ const APP_ROUTES: Routes = [
     { path: 'editarCandidato/:idCandidato', component: EditarCandidatoComponent },
     { path: 'concursos', component: ConcursosListagemComponent },
     { path: 'cadastrarConcurso', component: ConcursoFormComponent },
-    { path: 'editarConcurso/:idConcurso', component: EditarConcursoComponent }
-
+    { path: 'editarConcurso/:idConcurso', component: EditarConcursoComponent },
+    { path: 'concursoCandidato', component: ConcursoCandidatoListagemComponent }
 ];
 export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);
