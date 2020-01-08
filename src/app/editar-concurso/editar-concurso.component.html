@@ -1,6 +1,6 @@
 <h1>Editar Concurso</h1>
 
-<form method="PUT" #formConcurso (ngSubmit)="atualizar(formConcurso)" class="form-group">
+
     <table class="table">
         <tr>
             <td>Nome</td>
@@ -11,11 +11,11 @@
             <td><input type="text" id="quantidadeVagas" name="quantidadeVagas" class="form-control" [(ngModel)] = "concurso.quantidadeVagas" required></td>
         </tr>
         <tr>
-            <input type="hidden" id="idConcurso" name="idConcurso" class="form-control" [(ngModel)] = "concurso.idConcurso" required>
+            <input type="hidden" id="id" name="id" class="form-control" [(ngModel)] = "concurso.id" required>
         </tr>
         <tr>
             <td colspan="2"></td>
-            <td><button class="btn waves-effect waves-light right" type="submit">Salvar</button></td>
+            <td><button class="btn waves-effect waves-light right" (click)="atualizar(concurso)">Salvar</button></td>
         </tr>
     </table>
-</form>
+

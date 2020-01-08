@@ -16,6 +16,9 @@ export class ConcursoCandidatoService {
   public listar() {
     return this.http.get<any[]>(`${this.concursoCandidatoUrl}`);
   }
+  public listarCandidatosPorConcurso(idConcurso: number){
+    return this.http.get<any[]>(`${this.concursoCandidatoUrl}/${idConcurso}`)
+  }
   public remover(idCandidato: number, idConcurso: number) {
     return this.http.delete(`${this.concursoCandidatoUrl}/${idCandidato}/${idConcurso}`)
   }

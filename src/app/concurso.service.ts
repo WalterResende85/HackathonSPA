@@ -26,7 +26,8 @@ export class ConcursoService {
     return this.http.get<Concurso>(`${this.concursoUrl}/${idConcurso}`);
   }
 
-  atualizar(idConcurso: number, concurso: any): Observable<Concurso> {
-    return this.http.put<Concurso>(`${this.concursoUrl}/${idConcurso}`, concurso);
+  atualizar(id: number, concurso: any): Observable<Concurso> {
+    debugger
+    return this.http.put<Concurso>(`${this.concursoUrl}/${id}`, concurso);
   }
 }

@@ -9,7 +9,7 @@
             <a routerLink="/cadastrarConcurso" class="btn waves-effect waves-light z-depth-5">Novo Concurso</a>
         </div>
         <div>
-            <h2>Listagem dos Concursos</h2>
+            <h2>Listar Concursos</h2>
 
             <table class="table">
                 <tr>
@@ -18,21 +18,20 @@
                     <td>Quantidade De Vagas</td>
                 </tr>
                 <tr *ngFor="let concurso of concursos">
-                    <td>{{concurso.idConcurso}}</td>
+                    <td>{{concurso.id}}</td>
                     <td>{{concurso.nome}}</td>
                     <td>{{concurso.quantidadeVagas}}</td>
                     <td>
                         <button class="btn green darken-4 z-depth-2">
                             Me inscrever
                         </button>
-                        <a routerLink="/concursoCandidato">
-                        <button class="btn blue darken-1 z-depth-2">
+                        <button class="btn blue darken-1 z-depth-2" (click)=" listarCandidatosPorConcurso(concurso.id)">
                             Detalhes
                         </button>
-                        </a>
+                       
                     </td>
                     <td>
-                        <a routerLink="/editarConcurso/{{concurso.idConcurso}}">
+                        <a routerLink="/editarConcurso/{{concurso.id}}">
                             <button class="btn blue darken-4 z-depth-2">
                                 Editar
                             </button>

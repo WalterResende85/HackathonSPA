@@ -10,23 +10,24 @@ import { Concurso } from './editar-concurso.model';
   styleUrls: ['./editar-concurso.component.scss']
 })
 export class EditarConcursoComponent implements OnInit {
-  idConcurso: number;
+  id: number;
   concurso: Concurso;
   constructor(private concursoService: ConcursoService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.concurso = new Concurso();
-    this.idConcurso = this.route.snapshot.params['idConcurso'];
-    this.buscar(this.idConcurso);
+    this.id = this.route.snapshot.params['id'];
+    this.buscar(this.id);
   }
   buscar(id: number) {
-    return this.concursoService.buscar(this.idConcurso).subscribe(resposta => {
+    return this.concursoService.buscar(this.id).subscribe(resposta => {
      
       this.concurso = resposta;
     });
   }
-  atualizar(idConcurso: number, concurso: Concurso) {
-    this.concursoService.atualizar(idConcurso, concurso).subscribe();
+  atualizar(concurso: Concurso) {
+    debugger
+    this.concursoService.atualizar(concurso.id, concurso).subscribe();
     this.router.navigate(['/concursos']);
   }
 }

@@ -1,7 +1,5 @@
-
-
 export class Candidato {
-    idCandidato: number;
+    id: number;
     nome: String;
     cpf: String;
     cidade: String;

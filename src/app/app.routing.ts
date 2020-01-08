@@ -15,10 +15,10 @@ const APP_ROUTES: Routes = [
     { path: '', component: HomeComponent },
     { path: 'candidatos', component: CandidatosListagemComponent },
     { path: 'cadastrarCandidato', component: CandidatoFormComponent },
-    { path: 'editarCandidato/:idCandidato', component: EditarCandidatoComponent },
+    { path: 'editarCandidato/:id', component: EditarCandidatoComponent },
     { path: 'concursos', component: ConcursosListagemComponent },
     { path: 'cadastrarConcurso', component: ConcursoFormComponent },
-    { path: 'editarConcurso/:idConcurso', component: EditarConcursoComponent },
-    { path: 'concursoCandidato', component: ConcursoCandidatoListagemComponent }
+    { path: 'editarConcurso/:id', component: EditarConcursoComponent },
+    { path: 'concursoCandidato/:id', component: ConcursoCandidatoListagemComponent }
 ];
 export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);

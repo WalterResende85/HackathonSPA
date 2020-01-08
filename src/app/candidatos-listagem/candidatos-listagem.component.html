@@ -18,11 +18,11 @@
                     <td>Cidade</td>
                 </tr>
                 <tr *ngFor="let candidato of candidatos">
-                    <td>{{candidato.idCandidato}}</td>
+                    <td>{{candidato.id}}</td>
                     <td>{{candidato.nome}}</td>
                     <td>{{candidato.cidade}}</td>
                     <td>
-                        <a routerLink="/editarCandidato/{{candidato.idCandidato}}">
+                        <a routerLink="/editarCandidato/{{candidato.id}}">
                             <button type="submit" class="btn blue darken-4 z-depth-2">
                                 Editar
                             </button>
@@ -43,7 +43,7 @@
             <button class="btn orange darken-4 z-depth-2" (click)="remover()">
                 Remover
             </button>
-            <button class="btn black z-depth-2" (click)="toggleModalExcluir(null)">
+            <button class="btn black z-depth-2 " (click)="toggleModalExcluir(null)">
                 Fechar
             </button>
         </div>

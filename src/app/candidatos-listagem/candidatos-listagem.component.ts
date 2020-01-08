@@ -34,7 +34,7 @@ export class CandidatosListagemComponent implements OnInit {
   }
 
   remover() {
-    this.candidatoService.remover(this.candidato.idCandidato).subscribe(() => {
+    this.candidatoService.remover(this.candidato.id).subscribe(() => {
       this.toggleModalExcluir(null);
       this.listar();
     });

@@ -11,20 +11,20 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./editar-candidato.component.scss']
 })
 export class EditarCandidatoComponent implements OnInit {
-  idCandidato: number;
+  id: number;
   candidato: Candidato; 
 
   constructor(private CandidatoService: CandidatoService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.candidato = new Candidato();
-    this.idCandidato = this.route.snapshot.params['idCandidato'];
-    this.buscar(this.idCandidato);
+    this.id = this.route.snapshot.params['id'];
+    this.buscar(this.id);
    
   }
   
-  buscar(idCandidato: number) {
-       return this.CandidatoService.buscar(this.idCandidato).subscribe(resposta => {
+  buscar(id: number) {
+       return this.CandidatoService.buscar(id).subscribe(resposta => {
          this.candidato = resposta;        
     });
   }

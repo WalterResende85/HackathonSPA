@@ -1,5 +1,5 @@
 export class ConcursoCandidato {
-    idcandidato: number;
+    idCandidato: number;
     idConcurso: number;
     nota: number;
 

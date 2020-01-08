@@ -19,15 +19,15 @@ export class CandidatoService {
     return this.http.get<any[]>(`${this.candidatosUrl}`);
   }
 
-  public remover(idCandidato:number){
-    return this.http.delete(`${this.candidatosUrl}/${idCandidato}`);
+  public remover(id:number){
+    return this.http.delete(`${this.candidatosUrl}/${id}`);
   }
 
-  public buscar(idCandidato: number): Observable<Candidato> {
-    return this.http.get<Candidato>(`${this.candidatosUrl}/${idCandidato}`);
+  public buscar(id: number): Observable<Candidato> {
+    return this.http.get<Candidato>(`${this.candidatosUrl}/${id}`);
   }
 
   public atualizar(candidato: Candidato): Observable<Candidato> {
-    return this.http.put<Candidato>(`${this.candidatosUrl}/${candidato.idCandidato}`, candidato);
+    return this.http.put<Candidato>(`${this.candidatosUrl}/${candidato.id}`, candidato);
   }
 }
