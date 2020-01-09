@@ -11,7 +11,7 @@ export class ConcursoCandidatoService {
   constructor(private http: HttpClient) { }
 
   public salvar(concursoCandidato: any) {
-    return this.http.post(this.concursoCandidatoUrl, concursoCandidato);
+     return this.http.post(this.concursoCandidatoUrl, concursoCandidato);
   }
   public listar() {
     return this.http.get<any[]>(`${this.concursoCandidatoUrl}`);
@@ -25,7 +25,7 @@ export class ConcursoCandidatoService {
   public buscar(idCandidato: number, idConcurso: number): Observable<ConcursoCandidato> {
     return this.http.get<ConcursoCandidato>(`${this.concursoCandidatoUrl}/${idCandidato}/${idConcurso}`)
   }
-  public atualizar(idCandidato: number, idConcurso: number, ConcursoCandidato): Observable<ConcursoCandidato> {
+  public atualizar(idCandidato: number, idConcurso: number, ConcursoCandidato: ConcursoCandidato): Observable<ConcursoCandidato> {
     return this.http.put<ConcursoCandidato>(`${this.concursoCandidatoUrl}/${idCandidato}/${idConcurso}`, ConcursoCandidato);
   }
 }

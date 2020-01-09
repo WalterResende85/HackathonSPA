@@ -23,14 +23,13 @@
                     <td>{{concurso.quantidadeVagas}}</td>
                     <td>
                         <button id="btnIncreverCandidato" class="btn green darken-4 z-depth-5"
-                        (click)="toggleModalIncreverCandidato(concurso)">
+                            (click)="toggleModalIncreverCandidato(concurso)">
                             Me inscrever
                         </button>
-                        <button class="btn blue darken-1 z-depth-5" 
-                        (click)=" listarCandidatosPorConcurso(concurso.id)">
+                        <button class="btn blue darken-1 z-depth-5" (click)=" listarCandidatosPorConcurso(concurso.id)">
                             Detalhes
                         </button>
-                       
+
                     </td>
                     <td>
                         <a routerLink="/editarConcurso/{{concurso.id}}">
@@ -42,7 +41,7 @@
                             (click)="toggleModalExcluir(concurso)">
                             Remover
                         </button>
-                        
+
                     </td>
 
                 </tr>
@@ -53,12 +52,13 @@
     <div id="modalIncreverCandidato" class="modal" *ngIf="exibirModalIncreverCandidato">
         <div class="modalIncreverCandidato-content">
             <h5>Cadatrar Candidato no concurso {{concurso.nome}}</h5>
-            <select class="form-control" name="candidatos" id="candidatos">
-                <option *ngFor="let candidato of candidatos">{{candidato.nome}}</option>
-                <option>aaaaaaaa</option>
-            </select>
-
-            <button class="btn waves-effect waves-light z-depth-5" (click)="Cadastrar()">
+            <div class="form-group">
+                <label for="candidato">Candidatos</label>
+                <select [(ngModel)]="concursoCandidato.idCandidato" name="cadidato">
+                    <option *ngFor="let candidato of candidatos" [ngValue]="candidato.id">{{ candidato.nome }}</option>
+                </select>
+            </div>
+            <button class="btn waves-effect waves-light z-depth-5" (click)="InscreverCandidato(concurso.id)">
                 Cadastrar
             </button>
             <button class="btn black z-depth-5" (click)="toggleModalIncreverCandidato(null)">

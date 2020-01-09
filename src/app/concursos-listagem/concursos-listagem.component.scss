@@ -11,6 +11,9 @@
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     border-radius: 30px;
   }
+  select{
+    display: block;
+  }
   
   /* Modal Content/Box */
   .modalIncreverCandidato-content {

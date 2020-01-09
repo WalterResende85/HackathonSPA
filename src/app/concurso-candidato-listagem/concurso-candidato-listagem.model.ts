@@ -9,5 +9,4 @@ export class ConcursoCandidato {
 
     nomeConcurso: String;
     quantidadeVagas: number;
-
 }
