@@ -21,13 +21,16 @@ export class EditarConcursoComponent implements OnInit {
   }
   buscar(id: number) {
     return this.concursoService.buscar(this.id).subscribe(resposta => {
-     
+
       this.concurso = resposta;
     });
   }
   atualizar(concurso: Concurso) {
     debugger
-    this.concursoService.atualizar(concurso.id, concurso).subscribe();
-    this.router.navigate(['/concursos']);
+    this.concursoService.atualizar(concurso.id, concurso).subscribe(() => {
+      this.router.navigate(['/concursos']);
+    }
+    );
+
   }
 }

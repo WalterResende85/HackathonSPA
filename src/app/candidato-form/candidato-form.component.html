@@ -1,5 +1,5 @@
-<h3>Cadastrando candidato</h3>
-<form class="form-group">
+<h4>Cadastrar candidato</h4>
+
     <table class="table">
         <tr>
             <td>Nome</td>
@@ -7,7 +7,7 @@
         </tr>
         <tr>
             <td>CPF</td>
-            <td><input type="number" id="cpf" name="cpf" max="11"class="form-control" [(ngModel)] = "candidato.cpf" required></td>
+            <td><input type="number" id="cpf" name="cpf" min="11" max="11" class="form-control" [(ngModel)] = "candidato.cpf" required></td>
         </tr>
         <tr>
             <td>Cidade</td>
@@ -19,4 +19,3 @@
             <td><button class="btn waves-effect waves-light right" (click)="salvar()">Salvar</button></td>
         </tr>
     </table>
-</form>

@@ -4,6 +4,8 @@ import { ConcursoService } from './../concurso.service';
 import { Concurso } from '../editar-concurso/editar-concurso.model';
 import { ConcursoCandidatoService } from '../concurso-candidato.service';
 import { Router } from '@angular/router';
+import { CandidatoService } from './../candidato.service';
+import { Candidato } from '../editar-candidato/editar-candidato.model';
 
 @Component({
   selector: 'app-concursos-listagem',
@@ -13,11 +15,14 @@ import { Router } from '@angular/router';
 export class ConcursosListagemComponent implements OnInit {
   concursos: Array<any>;
   exibirModal : boolean = false;
+  exibirModalIncreverCandidato : boolean = false;
   concurso: Concurso;
   concursoCandidatos: Array<any>;
+  candidatos:Array<any>;
   constructor(private concursoService: ConcursoService, 
     private concursoCandidatoService: ConcursoCandidatoService,
-    private router: Router) { }
+    private router: Router,
+    private candidatoService: CandidatoService) { }
 
   ngOnInit() {
     this.listar();
@@ -41,9 +46,18 @@ export class ConcursosListagemComponent implements OnInit {
     });
   }
   toggleModalExcluir(concurso: Concurso) {
-    
-    this.concurso = concurso;
-    console.log('aaaa');
-   this.exibirModal = !this.exibirModal;
+        this.concurso = concurso;
+        this.exibirModal = !this.exibirModal;
   }
+  toggleModalIncreverCandidato(concurso: Concurso) {
+    this.listarCandidatos();
+    this.concurso = concurso;
+    this.exibirModalIncreverCandidato = !this.exibirModalIncreverCandidato;
+}
+  listarCandidatos(){
+    this.candidatoService.listar().subscribe(dados=>{
+      this.candidatos = dados;
+    });
+  }
+
 }
