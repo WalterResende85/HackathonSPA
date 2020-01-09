@@ -22,11 +22,11 @@
                     <td>{{concurso.nome}}</td>
                     <td>{{concurso.quantidadeVagas}}</td>
                     <td>
-                        <button id="btnIncreverCandidato" class="btn green darken-4 z-depth-2"
+                        <button id="btnIncreverCandidato" class="btn green darken-4 z-depth-5"
                         (click)="toggleModalIncreverCandidato(concurso)">
                             Me inscrever
                         </button>
-                        <button class="btn blue darken-1 z-depth-2" 
+                        <button class="btn blue darken-1 z-depth-5" 
                         (click)=" listarCandidatosPorConcurso(concurso.id)">
                             Detalhes
                         </button>
@@ -34,11 +34,11 @@
                     </td>
                     <td>
                         <a routerLink="/editarConcurso/{{concurso.id}}">
-                            <button class="btn blue darken-4 z-depth-2">
+                            <button class="btn blue darken-4 z-depth-5">
                                 Editar
                             </button>
                         </a>
-                        <button id="btnRemover" class="btn red darken-4 z-depth-2"
+                        <button id="btnRemover" class="btn red darken-4 z-depth-5"
                             (click)="toggleModalExcluir(concurso)">
                             Remover
                         </button>
@@ -58,10 +58,10 @@
                 <option>aaaaaaaa</option>
             </select>
 
-            <button class="btn orange darken-4 z-depth-2" (click)="Cadastrar()">
+            <button class="btn waves-effect waves-light z-depth-5" (click)="Cadastrar()">
                 Cadastrar
             </button>
-            <button class="btn black z-depth-2" (click)="toggleModalIncreverCandidato(null)">
+            <button class="btn black z-depth-5" (click)="toggleModalIncreverCandidato(null)">
                 Fechar
             </button>
         </div>
@@ -69,10 +69,10 @@
     <div id="modalRemover" class="modal" *ngIf="exibirModal">
         <div class="modal-content">
             <h5>Deseja mesmo remover o concurso {{concurso.nome}} ?</h5>
-            <button class="btn orange darken-4 z-depth-2" (click)="remover()">
+            <button class="btn red darken-4 z-depth-5" (click)="remover()">
                 Remover
             </button>
-            <button class="btn black z-depth-2" (click)="toggleModalExcluir(null)">
+            <button class="btn black z-depth-5" (click)="toggleModalExcluir(null)">
                 Fechar
             </button>
         </div>
